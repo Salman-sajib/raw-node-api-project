@@ -2,9 +2,20 @@
 const http = require('node:http');
 const { handleReqRes } = require('./helpers/handleReqRes');
 const enviroment = require('./helpers/environments');
+const data = require('./lib/data');
 
 // app object - module scaffolding
 const app = {};
+
+// testing file will erase later
+data.create(
+  'test',
+  'newFile',
+  { name: 'Bangladesh', language: 'bangle' },
+  function (err) {
+    console.log(`error was`, err);
+  }
+);
 
 // create server
 app.createServer = () => {
